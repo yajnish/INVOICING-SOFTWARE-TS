@@ -1,0 +1,689 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{676E3CFC-5EA9-40C4-8F32-E7843D257233}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>INVOICING_SOFTWARE</RootNamespace>
+    <AssemblyName>INVOICING SOFTWARE</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>E:\fdb\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>890AB697687003B62340F17B9082ABE883DE0117</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>INVOICING SOFTWARE_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>TSLogo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="CsQuery, Version=1.3.3.249, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsQuery.1.3.4\lib\net40\CsQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.78\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Humanizer, Version=2.11.0.0, Culture=neutral, PublicKeyToken=979442b78dfc278e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Humanizer.Core.2.11.10\lib\netstandard2.0\Humanizer.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddClient.Designer.cs">
+      <DependentUpon>AddClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddProduct.Designer.cs">
+      <DependentUpon>AddProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChequeDepo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChequeDepo.Designer.cs">
+      <DependentUpon>ChequeDepo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientSaleReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientSaleReport.Designer.cs">
+      <DependentUpon>ClientSaleReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CNReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CNReport.Designer.cs">
+      <DependentUpon>CNReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreditNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreditNote.Designer.cs">
+      <DependentUpon>CreditNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dataaccess.cs" />
+    <Compile Include="delivery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="delivery.Designer.cs">
+      <DependentUpon>delivery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenerateInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerateInvoice.Designer.cs">
+      <DependentUpon>GenerateInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenReport.Designer.cs">
+      <DependentUpon>GenReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="helper.cs" />
+    <Compile Include="INVOICEDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INVOICEDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="INVOICEDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INVOICEDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="INVOICEDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INVOICEDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="INVOICEDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INVOICEDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="INVOICEDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INVOICEDataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="INVOICEDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INVOICEDataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="INVOICEDataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INVOICEDataSet14.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="INVOICEDataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INVOICEDataSet15.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="INVOICEDataSet16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INVOICEDataSet16.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="INVOICEDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INVOICEDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="INVOICEDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INVOICEDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="INVOICEDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INVOICEDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="INVOICEDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INVOICEDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="INVOICEDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INVOICEDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="INVOICEDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INVOICEDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="INVOICEDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INVOICEDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="INVOICEDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INVOICEDataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NotSettled.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotSettled.Designer.cs">
+      <DependentUpon>NotSettled.cs</DependentUpon>
+    </Compile>
+    <Compile Include="product.cs" />
+    <Compile Include="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Receipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receipt.Designer.cs">
+      <DependentUpon>Receipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RemoveClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RemoveClient.Designer.cs">
+      <DependentUpon>RemoveClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RemoveProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RemoveProducts.Designer.cs">
+      <DependentUpon>RemoveProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports.Designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesReport.Designer.cs">
+      <DependentUpon>SalesReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statement.Designer.cs">
+      <DependentUpon>Statement.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddClient.resx">
+      <DependentUpon>AddClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddProduct.resx">
+      <DependentUpon>AddProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChequeDepo.resx">
+      <DependentUpon>ChequeDepo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientSaleReport.resx">
+      <DependentUpon>ClientSaleReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CNReport.resx">
+      <DependentUpon>CNReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreditNote.resx">
+      <DependentUpon>CreditNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="delivery.resx">
+      <DependentUpon>delivery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenerateInvoice.resx">
+      <DependentUpon>GenerateInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenReport.resx">
+      <DependentUpon>GenReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotSettled.resx">
+      <DependentUpon>NotSettled.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receipt.resx">
+      <DependentUpon>Receipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RemoveClient.resx">
+      <DependentUpon>RemoveClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RemoveProducts.resx">
+      <DependentUpon>RemoveProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports.resx">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesReport.resx">
+      <DependentUpon>SalesReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statement.resx">
+      <DependentUpon>Statement.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <None Include="INVOICEDataSet.xsc">
+      <DependentUpon>INVOICEDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICEDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>INVOICEDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="INVOICEDataSet.xss">
+      <DependentUpon>INVOICEDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICEDataSet1.xsc">
+      <DependentUpon>INVOICEDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICEDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>INVOICEDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="INVOICEDataSet1.xss">
+      <DependentUpon>INVOICEDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICEDataSet10.xsc">
+      <DependentUpon>INVOICEDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICEDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>INVOICEDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="INVOICEDataSet10.xss">
+      <DependentUpon>INVOICEDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICEDataSet11.xsc">
+      <DependentUpon>INVOICEDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICEDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>INVOICEDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="INVOICEDataSet11.xss">
+      <DependentUpon>INVOICEDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICEDataSet12.xsc">
+      <DependentUpon>INVOICEDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICEDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>INVOICEDataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="INVOICEDataSet12.xss">
+      <DependentUpon>INVOICEDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICEDataSet13.xsc">
+      <DependentUpon>INVOICEDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICEDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>INVOICEDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="INVOICEDataSet13.xss">
+      <DependentUpon>INVOICEDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICEDataSet14.xsc">
+      <DependentUpon>INVOICEDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICEDataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>INVOICEDataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="INVOICEDataSet14.xss">
+      <DependentUpon>INVOICEDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICEDataSet15.xsc">
+      <DependentUpon>INVOICEDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICEDataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>INVOICEDataSet15.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="INVOICEDataSet15.xss">
+      <DependentUpon>INVOICEDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICEDataSet16.xsc">
+      <DependentUpon>INVOICEDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICEDataSet16.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>INVOICEDataSet16.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="INVOICEDataSet16.xss">
+      <DependentUpon>INVOICEDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICEDataSet2.xsc">
+      <DependentUpon>INVOICEDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICEDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>INVOICEDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="INVOICEDataSet2.xss">
+      <DependentUpon>INVOICEDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICEDataSet3.xsc">
+      <DependentUpon>INVOICEDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICEDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>INVOICEDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="INVOICEDataSet3.xss">
+      <DependentUpon>INVOICEDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICEDataSet4.xsc">
+      <DependentUpon>INVOICEDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICEDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>INVOICEDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="INVOICEDataSet4.xss">
+      <DependentUpon>INVOICEDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICEDataSet5.xsc">
+      <DependentUpon>INVOICEDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICEDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>INVOICEDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="INVOICEDataSet5.xss">
+      <DependentUpon>INVOICEDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICEDataSet6.xsc">
+      <DependentUpon>INVOICEDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICEDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>INVOICEDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="INVOICEDataSet6.xss">
+      <DependentUpon>INVOICEDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICEDataSet7.xsc">
+      <DependentUpon>INVOICEDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICEDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>INVOICEDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="INVOICEDataSet7.xss">
+      <DependentUpon>INVOICEDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICEDataSet8.xsc">
+      <DependentUpon>INVOICEDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICEDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>INVOICEDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="INVOICEDataSet8.xss">
+      <DependentUpon>INVOICEDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICEDataSet9.xsc">
+      <DependentUpon>INVOICEDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICEDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>INVOICEDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="INVOICEDataSet9.xss">
+      <DependentUpon>INVOICEDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="INVOICING SOFTWARE_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GAA2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stencil.receipt %281%291.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stencil.receipt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stencil.overkill %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stencil.inv1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stencil.rem-prod1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stencil.add-client1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stencil.add-prod1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stencil.removeprod1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stencil.overkill1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stencil.dashboard1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stencil.blog-post-image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add product.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add product1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove product.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add client.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove client.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stencil.lil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stencil.lil1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stencil.500.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stencil.500 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addINV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addReceipt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stencil.logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TSLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TSLogo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
